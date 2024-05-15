@@ -1,107 +1,46 @@
 # Meme Generator
-Meme generator is an application that can generate meme by combining image and text from users.
-This application supports both CLI and web based requests.
 
-![sample_result](./src/tmp/542639957643155.jpg)
+This project provides a meme generator tool using both a command-line interface (CLI) and a web application built with Flask.
 
-## Setup
-This code is tested on Python 3.6+.
+## Features
 
-### Get the Code
-```
-$ git clone https://github.com/ekaakurniawan/meme-generator-starter-code.git
-```
+- Create memes via command line or web interface.
+- Combines an image with a quote to generate memes.
 
-### Create Virtual Environment
-Name the virtual environment `meme-generator` or something else. You only need to do this once.
-```
-$ python3 -m venv [...]/virtualenv/meme-generator
-```
+## Installation
 
-### Activate the virtual environment.
-```
-$ source [...]/virtualenv/meme-generator/bin/activate
-```
-As the result, make sure your prompt has additional `(meme-generator)`. Run the reset of the commands in the virtual environment.
+1. Clone the repository:
 
-### Install Required Python Packages
-Go to `meme-generator-starter-code` directory and run the following.
-```
-$ pip install -r requirements.txt
-```
+    ```bash
+    git clone https://github.com/giangbtr97/udacity-intermediate-python-meme-generator.git
+    ```
 
-### Install Required Linux Packages
-```
-$ sudo apt-get install -y xpdf
-```
+2. Install the required dependencies:
 
-### Perform Style Checking
-```
-$ pycodestyle src/
-```
-
-### Perform Type Checking
-```
-$ mypy src/
-```
-Ignore errors for skipping analyzing docx, pandas, and PIL modules as they are external packages.
-```
-src/QuoteEngine/DocxIngestor.py:5: error: Skipping analyzing 'docx': found module but no type hints or library stubs
-src/QuoteEngine/CSVIngestor.py:5: error: Skipping analyzing 'pandas': found module but no type hints or library stubs
-src/MemeEngine/MemeEngine.py:5: error: Skipping analyzing 'PIL': found module but no type hints or library stubs
-src/MemeEngine/MemeEngine.py:5: note: See https://mypy.readthedocs.io/en/latest/running_mypy.html#missing-imports
-Found 3 errors in 3 files (checked 15 source files)
-```
-
-### Run Unit Testing
-To run unit testing, go to `src` directory.
-#### Test Quote Engine
-```
-$ python -m unittest tests.TestQuoteEngine
-```
-#### Test Meme Engine
-```
-$ python -m unittest tests.TestMemeEngine
-```
-
-
-## Project Organization
-All codes are located in `src` directory.
- - `MemeEngine`: Python module to make meme by combining image and quote.
- - `QuoteEngine`: Python module to ingest quote from different file types (CSV, Docx, PDF and Text).
- - `_data`: Directory to store images, quote files and font.
- - `templates`: Directory to store HTML templates.
- - `tests`: Python module for unit testing.
- - `tmp`: Directory to store temporary files and meme result.
- - `app.py`: Web application entry point.
- - `meme.py`: CLI application entry point.
+    ```bash
+    pip install -r requirements.txt
+    ```
 
 ## Usage
-### CLI Application
-CLI application stores the result in `tmp` directory.
- - Run with predefined image and quote.
-```
-$ python3 meme.py \
-  --path './_data/photos/dog/xander_1.jpg' \
-  --body 'when in doubt, run' \
-  --author 'someone from the internet'
-```
- - Run with random image and quote.
-```
-$ python3 meme.py
+
+### Command Line Interface (CLI)
+
+Run the `meme.py` script from the terminal with the following optional arguments:
+
+- `--body`: The quote body (string).
+- `--author`: The quote author (string).
+- `--path`: The image path (string).
+
+Example usage:
+
+```bash
+python3 meme.py --body "This is a quote body" --author "This is a quote author" --path "image.jpg"
 ```
 
-### Web Application
-Start web server using following command.
-```
-$ python3 app.py
-```
-Use web browser to access the location at `http://127.0.0.1:5000/`.
+### Command Line Interface (CLI) 
+1. Run the `app.py`
+    ```bash
+    python app.py
+    ```
 
-
-## Exit Virtual Environment
-Use `deactivate` command to exit from virtual environment.
-```
-$ deactivate
-```
-You can activate it again using `activate` command shown above.
+2. Open browser with link http://127.0.0.1:5000/
