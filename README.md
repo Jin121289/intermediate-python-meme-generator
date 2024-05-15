@@ -12,7 +12,7 @@ This project provides a meme generator tool using both a command-line interface 
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/giangbtr97/udacity-intermediate-python-meme-generator.git
+    git clone https://github.com/Jin121289/intermediate-python-meme-generator.git
     ```
 
 2. Install the required dependencies:
@@ -37,7 +37,7 @@ Example usage:
 python3 meme.py --body "This is a quote body" --author "This is a quote author" --path "image.jpg"
 ```
 
-### Command Line Interface (CLI) 
+### Flask Web Application
 1. Run the `app.py`
     ```bash
     python app.py
